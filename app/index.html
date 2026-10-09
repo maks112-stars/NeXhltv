@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090a0d">
+  <meta name="description" content="Nexhltv — матчи, игроки, команды и лига Counter-Strike 2.">
+  <link rel="icon" href="/assets/nexhltv-logo.png" type="image/png">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Nexhltv — CS2 лига и статистика</title>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Nexhltv — главная">
+        <img src="/assets/nexhltv-logo.png" alt="">
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Открыть меню">☰</button>
+      <nav class="navigation" id="navigation" aria-label="Основная навигация">
+        <a class="active" href="#home">Главная</a>
+        <a href="#matches">Матчи</a>
+        <a href="#teams">Команды</a>
+        <a href="#players">Игроки</a>
+        <a href="#competitions">Турниры</a>
+      </nav>
+      <a class="header-action" href="#league">Подать заявку <span>↗</span></a>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> Сообщество Counter-Strike 2</div>
+          <h1>Матчи, игроки.<br><span>Твоя лига CS2.</span></h1>
+          <p>Следи за результатами команд и присоединяйся к лиге.</p>
+          <div class="hero-buttons">
+            <a class="button button-primary" href="#matches">Смотреть матчи <span>↘</span></a>
+          </div>
+        </div>
+        <div class="hero-mark" aria-hidden="true">
+          <img src="/assets/nexhltv-logo.png" alt="">
+        </div>
+      </section>
+
+      <section class="content-section" id="matches">
+        <div class="section-head">
+          <div><div class="section-label">РАСПИСАНИЕ</div><h2>МАТЧИ</h2></div>
+          <a class="section-link" href="#matches">Все матчи <span>↗</span></a>
+        </div>
+        <div id="matchList" class="match-list"><div class="empty-card">Загружаем расписание матчей…</div></div>
+      </section>
+
+      <section class="content-section" id="competitions">
+        <div class="section-head">
+          <div><div class="section-label">СЕЗОНЫ И СОБЫТИЯ</div><h2>ЛИГИ И ТУРНИРЫ</h2></div>
+        </div>
+        <div class="competition-grid" id="leagueList"><div class="empty-card">Лиги и турниры появятся здесь.</div></div>
+      </section>
+
+      <section class="content-section section-tinted" id="teams">
+        <div class="section-head">
+          <div><div class="section-label">КОМАНДЫ</div><h2>РЕЙТИНГ</h2></div>
+        </div>
+        <div id="teamList" class="team-grid"><div class="empty-card">Рейтинг команд появится после добавления результатов.</div></div>
+      </section>
+
+      <section class="content-section" id="players">
+        <div class="section-head">
+          <div><div class="section-label">СТАТИСТИКА</div><h2>ИГРОКИ</h2></div>
+          <span class="section-link muted">РЕЙТИНГ И СТАТИСТИКА</span>
+        </div>
+        <div class="player-grid" id="playerList"><div class="empty-card">Статистика игроков появится после публикации матчей.</div></div>
+      </section>
+
+      <section class="league-section" id="league">
+        <div class="league-copy">
+          <div class="section-label">ДЛЯ КОМАНД</div>
+          <h2>Подай заявку <span>в лигу.</span></h2>
+          <p>Собери состав и оставь заявку. Мы свяжемся с капитаном и расскажем о ближайшем сезоне.</p>
+          <a class="button button-primary" href="#application">Подать заявку <span>↗</span></a>
+        </div>
+      </section>
+
+      <section class="application-section" id="application">
+        <div class="section-head">
+          <div><div class="section-label">ПРИСОЕДИНЯЙСЯ</div><h2>ЗАЯВКА В ЛИГУ</h2></div>
+          <span class="form-private">ЗАЯВКА ДЛЯ КАПИТАНА КОМАНДЫ</span>
+        </div>
+        <form id="applicationForm" class="application-form">
+          <label>Название команды<input name="team" maxlength="80" placeholder="Например, Team Name" required></label>
+          <label>Капитан<input name="captain" maxlength="80" placeholder="Имя или игровой ник" required></label>
+          <label>Email для связи<input name="email" type="email" maxlength="120" placeholder="captain@example.com" required></label>
+          <label>Контакт для связи<input name="contact" maxlength="120" placeholder="Telegram, Discord или другое" required></label>
+          <label class="form-wide">Состав команды<textarea name="roster" maxlength="2000" rows="4" placeholder="Перечисли игровой ник каждого игрока — по одному на строку" required></textarea></label>
+          <label class="form-wide">Комментарий<textarea name="message" maxlength="2000" rows="3" placeholder="Ссылка на профиль команды или дополнительная информация"></textarea></label>
+          <div class="form-footer form-wide">
+            <p>Отправляя заявку, ты подтверждаешь, что указал корректные контактные данные.</p>
+            <button class="button button-primary" type="submit">Отправить заявку <span>↗</span></button>
+          </div>
+          <div class="form-status form-wide" id="formStatus" role="status" aria-live="polite"></div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <a class="footer-brand" href="#home" aria-label="Nexhltv — главная"><img src="/assets/nexhltv-logo.png" alt=""></a>
+      <a href="/admin.html">Админ-панель</a>
+      <span>НЕЗАВИСИМЫЙ CS2 HUB</span>
+      <span>© NEXHLTV 2026</span>
+    </footer>
+  </div>
+  <script src="/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "nexhltv",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Nexhltv — CS2 league, teams, players and matches",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

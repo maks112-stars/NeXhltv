@@ -1,0 +1,46 @@
+{
+  "players": [
+    {
+      "id": "19341fb8-accb-4571-af2a-799825121a53",
+      "nickname": "вфввфвф",
+      "team": "вфвфвфвф",
+      "country": "вфвфвфв",
+      "rank": 1,
+      "matches": 1,
+      "rating": 1,
+      "winRate": 1
+    }
+  ],
+  "teams": [
+    {
+      "id": "fa892733-0235-41c6-957f-1da802f78b3c",
+      "name": "аваыа",
+      "country": "аыаыаы",
+      "matches": 1,
+      "wins": 1,
+      "losses": 1,
+      "rating": 1
+    }
+  ],
+  "matches": [
+    {
+      "id": "2e53ad4d-4ac2-4b10-8f6e-a8bc94239b48",
+      "date": "1111-11-11",
+      "time": "11:11",
+      "home": "1",
+      "away": "2",
+      "status": "Идёт",
+      "event": "турнир",
+      "score": "1:1"
+    }
+  ],
+  "leagues": [
+    {
+      "id": "56e04be7-3807-4d2a-84ed-70764c1b3fc6",
+      "name": "1фвфвфв",
+      "date": "фвфвфвф",
+      "status": "Идёт",
+      "description": "вфвфвф"
+    }
+  ]
+}

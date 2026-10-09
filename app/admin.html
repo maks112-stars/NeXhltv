@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090a0d">
+  <title>Админ-панель — Nexhltv</title>
+  <link rel="stylesheet" href="/admin.css">
+  <script src="/admin.js" defer></script>
+</head>
+<body>
+  <main class="admin-shell">
+    <header class="admin-header">
+      <a class="admin-brand" href="/" aria-label="На сайт Nexhltv"><img src="/assets/nexhltv-logo.png" alt="Nexhltv"></a>
+      <div><a class="back-link" href="/">← На сайт</a><button class="button button-quiet" id="logoutButton" type="button" hidden>Выйти</button></div>
+    </header>
+
+    <section class="login-panel" id="loginPanel" hidden>
+      <p class="eyebrow">УПРАВЛЕНИЕ САЙТОМ</p>
+      <h1 id="loginTitle">Вход в админ-панель</h1>
+      <p class="muted" id="loginDescription">Введите пароль администратора.</p>
+      <form id="loginForm">
+        <label for="adminPassword">Пароль</label>
+        <input id="adminPassword" name="password" type="password" autocomplete="current-password" required>
+        <div id="confirmPasswordField" hidden>
+          <label for="confirmAdminPassword">Повторите пароль</label>
+          <input id="confirmAdminPassword" name="confirmPassword" type="password" autocomplete="new-password" minlength="12">
+        </div>
+        <button class="button button-primary" id="loginButton" type="submit">Войти</button>
+      </form>
+      <p class="form-message" id="loginMessage" role="status"></p>
+    </section>
+
+    <section class="dashboard" id="dashboard" hidden>
+      <div class="dashboard-heading">
+        <div><p class="eyebrow">NEXHLTV • УПРАВЛЕНИЕ</p><h1>Админ-панель</h1></div>
+      </div>
+      <nav class="tabs" aria-label="Разделы админ-панели">
+        <button class="tab active" type="button" data-panel="matches">Матчи</button>
+        <button class="tab" type="button" data-panel="teams">Команды</button>
+        <button class="tab" type="button" data-panel="players">Игроки</button>
+        <button class="tab" type="button" data-panel="leagues">Лиги и турниры</button>
+        <button class="tab" type="button" data-panel="applications">Заявки</button>
+      </nav>
+      <p class="form-message dashboard-message" id="dashboardMessage" role="status"></p>
+      <section class="collection-panel" id="collectionPanel">
+        <div class="record-list">
+          <div class="list-heading"><h2 id="collectionTitle">Матчи</h2><button class="button button-primary" id="newRecordButton" type="button">Добавить</button></div>
+          <div class="records" id="records"></div>
+        </div>
+        <form class="record-editor" id="recordForm">
+          <h2 id="editorTitle">Новая запись</h2>
+          <div class="editor-fields" id="editorFields"></div>
+          <div class="editor-actions">
+            <button class="button button-primary" type="submit">Сохранить</button>
+            <button class="button button-quiet" id="cancelEditButton" type="button">Отмена</button>
+          </div>
+        </form>
+      </section>
+      <section class="applications-panel" id="applicationsPanel" hidden>
+        <h2>Заявки команд</h2>
+        <div class="records" id="applications"></div>
+      </section>
+    </section>
+
+    <p class="global-error" id="globalError" role="alert"></p>
+  </main>
+</body>
+</html>
